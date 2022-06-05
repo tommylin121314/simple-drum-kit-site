@@ -40,15 +40,15 @@ function playSound(key) {
             var sound = new Audio("sounds/crash.mp3");
             sound.play();
             break;
-        default:
-            console.log(this)
     }
 }
 
 function animateButton(key) {
-    var button = document.getElementsByClassName(key)[0]
-    button.classList.add("pressed")
-    setTimeout(() => {
-        button.classList.remove("pressed")
-    }, 100);
+    if(['w','a','s','d','j','k','l'].includes(key)) {
+        var button = document.getElementsByClassName(key)[0]
+        button.classList.add("pressed")
+        setTimeout(() => {
+            button.classList.remove("pressed")
+        }, 100);
+    }
 }
